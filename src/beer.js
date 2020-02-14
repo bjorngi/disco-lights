@@ -42,9 +42,6 @@ const callback = (stream) => {
       max = Math.max(max, a);
     }
 
-    console.log(average)
-
-
     analyser.getByteFrequencyData(frequencyData);
     // get fullest bin
     var idx = 0;
@@ -56,7 +53,7 @@ const callback = (stream) => {
 
     var frequency = idx * ctx.sampleRate / analyser.fftSize;
 
-    if(frequency < 1000 && average > 20000) {
+    if(frequency < 1000 && average > 40000) {
       changeColor()
     }
 
